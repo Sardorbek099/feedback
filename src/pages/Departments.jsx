@@ -13,16 +13,16 @@ export default function DepartmentsPage({ darkMode }) {
   const API = import.meta.env.VITE_API_URL;
 
 
-  useEffect(() => {
-    fetch(`${API}/faculties`)
-      .then(res => res.json())
-      .then(data => {
-        const selected = data.find(f => f.id.toString() === fid);
-        setFaculty(selected || null);
-      })
-      .catch(() => setFaculty(null))
-      .finally(() => setLoading(false));
-  }, [fid]);
+useEffect(() => {
+  fetch(`${API}/faculties`)
+    .then(res => res.json())
+    .then(data => {
+      const selected = data.find(f => f.id.toString() === fid);
+      setFaculty(selected || null);
+    })
+    .catch(() => setFaculty(null))
+    .finally(() => setLoading(false));
+}, [fid, API]);
 
   if (loading)
     return (

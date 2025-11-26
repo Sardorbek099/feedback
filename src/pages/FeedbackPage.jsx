@@ -22,7 +22,7 @@ function FeedbackPage({ darkMode }) {
   const [feedbackId, setFeedbackId] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const API = "https://feedback-2-oayz.onrender.com"; // yoki import.meta.env.VITE_API_URL
+const API = "http://localhost:5000";
 
   // Ma’lumotlarni yuklash
   const loadData = () => {

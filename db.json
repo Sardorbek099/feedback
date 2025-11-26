@@ -1,0 +1,177 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "sadmin1",
+      "password": "12345",
+      "role": "sadmin"
+    },
+    {
+      "id": 2,
+      "username": "sadmin2",
+      "password": "1234",
+      "role": "sadmin"
+    },
+    {
+      "id": 3,
+      "username": "sadmin3",
+      "password": "1234",
+      "role": "sadmin"
+    }
+  ],
+  "faculties": [
+    {
+      "id": "1",
+      "title": "Metallurgiya fakulteti",
+      "cafedras": [
+        {
+          "id": 1,
+          "title": "Kimyo kafedrasi"
+        },
+        {
+          "id": 2,
+          "title": "Materiallar kafedrasi"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Elektronika fakulteti",
+      "cafedras": [
+        {
+          "id": 3,
+          "title": "Dasturiy ta'minot kafedrasi"
+        },
+        {
+          "id": 4,
+          "title": "Sxemalar kafedrasi"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Moliya fakulteti",
+      "cafedras": [
+        {
+          "id": 5,
+          "title": "Hisob-fakultet kafedrasi"
+        },
+        {
+          "id": 6,
+          "title": "Moliyaviy tahlil kafedrasi"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Psixologiya fakulteti",
+      "cafedras": [
+        {
+          "id": 7,
+          "title": "Umumiy psixologiya kafedrasi"
+        },
+        {
+          "id": 8,
+          "title": "Amaliy psixologiya kafedrasi"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Biologiya fakulteti",
+      "cafedras": [
+        {
+          "id": 9,
+          "title": "Botanika kafedrasi"
+        },
+        {
+          "id": 10,
+          "title": "Zoologiya kafedrasi"
+        }
+      ]
+    }
+  ],
+  "feedbacks": [
+    {
+      "id": "1",
+      "fid": 1,
+      "did": 1,
+      "userId": "user1",
+      "rating": 4,
+      "comment": "Zo'r kafedra, darslar qiziqarli!",
+      "date": "2025-11-21T10:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "fid": 1,
+      "did": 2,
+      "userId": "user2",
+      "rating": 5,
+      "comment": "Ajoyib o'qituvchilar!",
+      "date": "2025-11-21T10:05:00.000Z"
+    },
+    {
+      "id": "3",
+      "fid": 2,
+      "did": 3,
+      "userId": "user3",
+      "rating": 3,
+      "comment": "Kafedra yaxshi, lekin darslar ba'zida qiyin.",
+      "date": "2025-11-21T10:10:00.000Z"
+    },
+    {
+      "id": "4",
+      "fid": 2,
+      "did": 4,
+      "userId": "user4",
+      "rating": 4,
+      "comment": "Darslar interaktiv va foydali.",
+      "date": "2025-11-21T10:15:00.000Z"
+    },
+    {
+      "id": "5",
+      "fid": 1,
+      "did": 1,
+      "userId": "user5",
+      "rating": 2,
+      "comment": "Ba'zi mavzular qiyin tushuniladi.",
+      "date": "2025-11-21T10:20:00.000Z"
+    },
+    {
+      "id": "dfa2",
+      "fid": 2,
+      "did": 4,
+      "userId": "demoUser",
+      "rating": 5,
+      "comment": "zzzzz",
+      "date": "2025-11-24T08:41:23.807Z"
+    },
+    {
+      "id": "e220",
+      "fid": 1,
+      "did": 2,
+      "userId": "demoUser",
+      "rating": 5,
+      "comment": "ssss",
+      "date": "2025-11-24T08:51:34.343Z"
+    },
+    {
+      "id": "11e0",
+      "fid": 1,
+      "did": 1,
+      "userId": "demoUser",
+      "rating": 5,
+      "comment": "",
+      "date": "2025-11-24T10:33:53.181Z"
+    },
+    {
+      "id": "6912",
+      "fid": 3,
+      "did": 5,
+      "userId": "demoUser",
+      "rating": 5,
+      "comment": "dddd",
+      "date": "2025-11-25T04:05:10.457Z"
+    }
+  ]
+}

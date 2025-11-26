@@ -22,7 +22,7 @@ useEffect(() => {
     })
     .catch(() => setFaculty(null))
     .finally(() => setLoading(false));
-}, [fid, API]);
+}, [fid,`https://feedback-2-oayz.onrender.com/faculties`]);
 
   if (loading)
     return (

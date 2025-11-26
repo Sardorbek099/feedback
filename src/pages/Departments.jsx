@@ -4,14 +4,17 @@ import { FaChalkboardTeacher, FaArrowLeft } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Card from "../components/Card";
 
+
 export default function DepartmentsPage({ darkMode }) {
   const { fid } = useParams(); // Tanlangan fakultet ID sini olamiz
   const [faculty, setFaculty] = useState(null);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+  const API = import.meta.env.VITE_API_URL;
+
 
   useEffect(() => {
-    fetch("https://feedback-2-oayz.onrender.com/faculties")
+    fetch(`${API}/faculties`)
       .then(res => res.json())
       .then(data => {
         const selected = data.find(f => f.id.toString() === fid);

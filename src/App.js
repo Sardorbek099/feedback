@@ -4,7 +4,6 @@ import { UserContextProvider } from "./context/UserContext";
 import FacultyList from "./pages/FacultyList";
 import DepartmentsPage from "./pages/Departments";
 import FeedbackPage from "./pages/FeedbackPage";
-import LoginModal from "./components/LoginModal";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 

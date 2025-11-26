@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaSun, FaMoon, FaStar, FaUniversity, FaBars } from "react-icons/fa";
+import { FaSun, FaMoon, FaStar, FaBars } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Logo from "../assets/images/logo1.svg"; // Institut logosi
 

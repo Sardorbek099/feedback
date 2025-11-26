@@ -22,11 +22,18 @@ function FeedbackPage({ darkMode }) {
   const [feedbackId, setFeedbackId] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const API = "https://feedback-2-oayz.onrender.com"; // yoki import.meta.env.VITE_API_URL
+
   // Ma’lumotlarni yuklash
   const loadData = () => {
     setLoading(true);
-    // Faculties va departments
-    fetch("https://feedback-2-oayz.onrender.com/faculties")
+    setAlreadyVoted(false);
+    setEditing(false);
+    setFeedbackId(null);
+    setRating(0);
+    setComment("");
+
+    fetch(`${API}/faculties`)
       .then((res) => res.json())
       .then((data) => {
         const f = data.find((f) => f.id.toString() === fid);
@@ -37,8 +44,7 @@ function FeedbackPage({ darkMode }) {
         }
       });
 
-    // Feedbacks
-    fetch(`https://feedback-2-oayz.onrender.com/feedbacks?fid=${fid}&did=${did}`)
+    fetch(`${API}/feedbacks?fid=${fid}&did=${did}`)
       .then((res) => res.json())
       .then((data) => {
         setFeedbacks(data);
@@ -56,18 +62,19 @@ function FeedbackPage({ darkMode }) {
 
   useEffect(loadData, [fid, did, userId]);
 
-  // Admin – delete
+  // Admin – delete feedback
   const deleteFeedback = async (id) => {
     if (!window.confirm("Rostdan ham o‘chirasizmi?")) return;
-    await fetch(`https://feedback-2-oayz.onrender.com/feedbacks/${id}`, {
+    await fetch(`${API}/feedbacks/${id}`, {
       method: "DELETE",
     });
     loadData();
   };
 
-  // User → o‘z fikrini yuboradi
+  // User – submit feedback
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (rating === 0) return;
 
     const payload = {
       fid: Number(fid),
@@ -79,17 +86,24 @@ function FeedbackPage({ darkMode }) {
     };
 
     const url = editing
-      ? `https://feedback-2-oayz.onrender.com/feedbacks/${feedbackId}`
-      : "https://feedback-2-oayz.onrender.com/feedbacks";
+      ? `${API}/feedbacks/${feedbackId}`
+      : `${API}/feedbacks`;
 
     fetch(url, {
       method: editing ? "PUT" : "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
-    }).then(() => {
-      setEditing(false);
-      loadData();
-    });
+    })
+      .then((res) => res.json())
+      .then((newFeedback) => {
+        // State’ni darhol yangilaymiz
+        setAlreadyVoted(true);
+        setEditing(false);
+        setFeedbackId(newFeedback.id || feedbackId || "tempId");
+        setRating(newFeedback.rating);
+        setComment(newFeedback.comment);
+        loadData();
+      });
   };
 
   if (loading) return <p style={{ textAlign: "center" }}>Yuklanmoqda...</p>;

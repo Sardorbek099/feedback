@@ -26,7 +26,7 @@ function FeedbackPage({ darkMode }) {
   const loadData = () => {
     setLoading(true);
     // Faculties va departments
-    fetch("http://localhost:5000/faculties")
+    fetch("https://feedback-2-oayz.onrender.com/faculties")
       .then((res) => res.json())
       .then((data) => {
         const f = data.find((f) => f.id.toString() === fid);
@@ -38,7 +38,7 @@ function FeedbackPage({ darkMode }) {
       });
 
     // Feedbacks
-    fetch(`http://localhost:5000/feedbacks?fid=${fid}&did=${did}`)
+    fetch(`https://feedback-2-oayz.onrender.com/feedbacks?fid=${fid}&did=${did}`)
       .then((res) => res.json())
       .then((data) => {
         setFeedbacks(data);
@@ -59,7 +59,7 @@ function FeedbackPage({ darkMode }) {
   // Admin – delete
   const deleteFeedback = async (id) => {
     if (!window.confirm("Rostdan ham o‘chirasizmi?")) return;
-    await fetch(`http://localhost:5000/feedbacks/${id}`, {
+    await fetch(`https://feedback-2-oayz.onrender.com/feedbacks/${id}`, {
       method: "DELETE",
     });
     loadData();
@@ -79,8 +79,8 @@ function FeedbackPage({ darkMode }) {
     };
 
     const url = editing
-      ? `http://localhost:5000/feedbacks/${feedbackId}`
-      : "http://localhost:5000/feedbacks";
+      ? `https://feedback-2-oayz.onrender.com/feedbacks/${feedbackId}`
+      : "https://feedback-2-oayz.onrender.com/feedbacks";
 
     fetch(url, {
       method: editing ? "PUT" : "POST",

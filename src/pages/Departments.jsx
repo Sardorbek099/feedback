@@ -11,7 +11,7 @@ export default function DepartmentsPage({ darkMode }) {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:5000/faculties")
+    fetch("https://feedback-2-oayz.onrender.com/faculties")
       .then(res => res.json())
       .then(data => {
         const selected = data.find(f => f.id.toString() === fid);

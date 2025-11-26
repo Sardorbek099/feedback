@@ -14,7 +14,7 @@ export default function FacultyList({ darkMode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/faculties")
+    fetch("https://feedback-2-oayz.onrender.com/faculties")
       .then(res => res.json())
       .then(data => setFaculties(data))
       .catch(() => setFaculties([]))

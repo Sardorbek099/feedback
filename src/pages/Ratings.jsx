@@ -9,8 +9,8 @@ export default function RatingsPage() {
 
   useEffect(() => {
     Promise.all([
-      fetch("http://localhost:5000/faculties").then(res => res.json()),
-      fetch("http://localhost:5000/feedbacks").then(res => res.json())
+      fetch("https://feedback-2-oayz.onrender.com/faculties").then(res => res.json()),
+      fetch("https://feedback-2-oayz.onrender.com/feedbacks").then(res => res.json())
     ])
     .then(([fData, fbData]) => {
       setFaculties(fData);

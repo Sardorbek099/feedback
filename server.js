@@ -1,12 +1,14 @@
-// backend/server.js
 const express = require("express");
 const cors = require("cors");
 
 const app = express();
-const PORT = 5000;
 
-app.use(cors({ origin: "http://localhost:3000" }));
-app.use(express.json()); // bodyParser o'rniga express.json()
+// Dinamik port: Render yoki local
+const PORT = process.env.PORT || 5000;
+
+// CORS: frontend URL bilan
+app.use(cors({ origin: "https://feedback-2-oayz.netlify.app" }));
+app.use(express.json());
 
 // LOG each request
 app.use((req, res, next) => {
@@ -36,4 +38,5 @@ app.post("/auth/login", (req, res) => {
   return res.json({ username: user.username, role: user.role, token: "fake-jwt-token" });
 });
 
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+// Serverni ishga tushirish
+app.listen(PORT, () => console.log(`Server running on https://feedback-2-oayz.onrender.com`));

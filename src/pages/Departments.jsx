@@ -10,11 +10,11 @@ export default function DepartmentsPage({ darkMode }) {
   const [faculty, setFaculty] = useState(null);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-  const API = import.meta.env.VITE_API_URL;
+  // const API = import.meta.env.VITE_API_URL;
 
 
 useEffect(() => {
-  fetch(`${API}/faculties`)
+  fetch(`https://feedback-2-oayz.onrender.com/faculties`)
     .then(res => res.json())
     .then(data => {
       const selected = data.find(f => f.id.toString() === fid);

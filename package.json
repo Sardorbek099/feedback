@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "feedback",
   "version": "0.1.0",
   "private": true,
@@ -42,3 +43,23 @@
     ]
   }
 }
+=======
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "build": "echo 'No build step required'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}
+>>>>>>> a3288ba98f676ba35e155cef5fabccc9ca5d77e9

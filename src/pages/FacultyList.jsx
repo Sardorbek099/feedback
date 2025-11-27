@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { API } from "../config";
 import { FaUniversity, FaChalkboardTeacher } from "react-icons/fa";
+import "./index.css";
+
 
 export default function FacultyList() {
   const [faculties, setFaculties] = useState([]);

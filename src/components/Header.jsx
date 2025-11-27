@@ -8,8 +8,11 @@ function Header({ darkMode, setDarkMode }) {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
-  const bgColor = darkMode ? "#1a1a1a" : "#0a66c2";
-  const textColor = "#fff";
+  const bgColor = darkMode ? "#1c1c1e" : "#ffffff"; // Hi-tech oq asos
+  const textColor = darkMode ? "#ffffff" : "#0a0a0a"; // qora matn yoki oqga mos
+
+  const buttonBg = darkMode ? "#2c2c2e" : "#f5f5f7"; // tugma fonlari
+  const buttonColor = darkMode ? "#0ff" : "#007aff"; // neon/iPhone 17 blue
 
   return (
     <header
@@ -23,12 +26,14 @@ function Header({ darkMode, setDarkMode }) {
         position: "sticky",
         top: 0,
         zIndex: 1000,
-        flexWrap: "wrap"
+        flexWrap: "wrap",
+        boxShadow: darkMode
+          ? "0 2px 10px rgba(0,255,255,0.2)"
+          : "0 2px 15px rgba(0,122,255,0.15)",
       }}
     >
       {/* Chap tomon: Logo + Hamburger */}
       <div style={{ display: "flex", alignItems: "center", gap: 15 }}>
-        {/* Logo */}
         <motion.img
           src={Logo}
           alt="ODTI Logo"
@@ -36,13 +41,12 @@ function Header({ darkMode, setDarkMode }) {
           whileHover={{ scale: 1.1, rotate: 5 }}
           onClick={() => navigate("/")}
         />
-        {/* Hamburger */}
         <div style={{ cursor: "pointer" }} onClick={() => setOpen(!open)}>
-          <FaBars size={20} />
+          <FaBars size={22} color={buttonColor} />
         </div>
       </div>
 
-      {/* Matn markazda */}
+      {/* Markazdagi matn */}
       <h1
         style={{
           margin: 0,
@@ -51,13 +55,11 @@ function Header({ darkMode, setDarkMode }) {
           fontWeight: 800,
           letterSpacing: 1.2,
           lineHeight: 1.3,
-          color: "#fff",
-          textShadow: "2px 2px 8px rgba(0,0,0,0.3)",
-          flex: 1,
           cursor: "default",
-          background: "linear-gradient(90deg, #ffdd00, #00c3ff)",
+          background: "linear-gradient(90deg, #007aff, #5ac8fa)",
           WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent"
+          WebkitTextFillColor: "transparent",
+          flex: 1,
         }}
       >
         ODTI Fakultetlar Faoliyatini Baholash Platformasi
@@ -67,20 +69,20 @@ function Header({ darkMode, setDarkMode }) {
       <div style={{ display: "flex", alignItems: "center", gap: 15 }}>
         {/* Reytinglar tugmasi */}
         <motion.div
-          whileHover={{ scale: 1.05 }}
+          whileHover={{ scale: 1.05, boxShadow: "0 0 10px #007aff" }}
           style={{
             display: "flex",
             alignItems: "center",
             gap: 8,
             padding: "6px 12px",
             borderRadius: 12,
-            background: darkMode ? "#333" : "#fff",
-            color: darkMode ? "#ffd700" : "#0077b6",
+            background: buttonBg,
+            color: buttonColor,
             fontWeight: 600,
             cursor: "pointer",
             boxShadow: darkMode
-              ? "0 2px 10px rgba(255,215,0,0.3)"
-              : "0 2px 10px rgba(0,119,182,0.3)"
+              ? "0 2px 10px rgba(0,255,255,0.2)"
+              : "0 2px 10px rgba(0,122,255,0.2)",
           }}
           onClick={() => navigate("/ratings")}
         >
@@ -93,20 +95,11 @@ function Header({ darkMode, setDarkMode }) {
           style={{ cursor: "pointer" }}
           onClick={() => setDarkMode(!darkMode)}
         >
-          {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
-        </motion.div>
-
-        {/* Institut icon */}
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: 5,
-            cursor: "default",
-            fontWeight: 600
-          }}
-        >
+          {darkMode ? (
+            <FaSun size={20} color="#ffd60a" />
+          ) : (
+            <FaMoon size={20} color="#007aff" />
+          )}
         </motion.div>
       </div>
     </header>

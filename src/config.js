@@ -1,2 +1,3 @@
 // src/config.js
-export const API = "https://feedback-2-oayz.onrender.com";
+export const API = "http://localhost:5000";
+

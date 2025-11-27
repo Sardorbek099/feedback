@@ -1,8 +1,8 @@
-import { motion } from "framer-motion";
+// import { } from "framer-;
 
 export default function Card({ children, darkMode, hoverRotate = 5, style, onClick }) {
   return (
-    <motion.div
+    <div
       onClick={onClick}
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
@@ -24,6 +24,6 @@ export default function Card({ children, darkMode, hoverRotate = 5, style, onCli
       }}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { API } from "../../config";
+import { API } from "../config";
 
 export default function FeedbackPage() {
   const { fid, did } = useParams();

@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Card from "../components/Card";
-import { API } from "../../config";
-
+import { API } from "../config";
 export default function FacultyList() {
   const [faculties, setFaculties] = useState([]);
   const navigate = useNavigate();

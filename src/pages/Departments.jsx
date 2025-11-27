@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Card from "../components/Card";
-import { API } from "../../config";
+import { API } from "../config";
 
 export default function DepartmentsPage() {
   const { fid } = useParams();

@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaUsers, FaComments, FaUniversity, FaStar, FaStarHalfAlt } from "react-icons/fa";
+import '../index.css';
+
 
 export default function RatingsPage() {
   const [faculties, setFaculties] = useState([]);

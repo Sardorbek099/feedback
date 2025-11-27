@@ -8,7 +8,8 @@ export default function FacultyList() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`${API}/faculties?_embed=cafedras`) // kafedralarni ham olib kelish
+    // Faculties bilan birga cafedralarni olish
+    fetch(`${API}/faculties?_embed=cafedras`)
       .then((res) => res.json())
       .then(setFaculties)
       .catch(() => setFaculties([]));
